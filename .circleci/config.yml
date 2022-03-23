@@ -44,10 +44,10 @@ jobs:
       - setup_remote_docker
       - docker/check
       - docker/build:
-          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-1-march-22
+          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-march23
           tag: 0.1.<< pipeline.number >>
       - docker/push:
-          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-1-march-22
+          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-march23
           tag: 0.1.<< pipeline.number >>
   
   deploy-to-heroku:
