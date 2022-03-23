@@ -122,7 +122,7 @@ workflows:
           environment: prod
           requires:
             - hold-for-approval
-          context: workshop_deployment-prod
+          context: workshop_deployment-dev
 
   nightly-build:
     when: << pipeline.parameters.scheduled >>
