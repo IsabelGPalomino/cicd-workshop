@@ -4,8 +4,7 @@ orbs:
   node: circleci/node@5.0.0
   snyk: snyk/snyk@1.1.2
   docker: circleci/docker@2.0.2
-  heroku: circleci/heroku@1.2.6
-
+  
 jobs:
   build-and-test:
     docker:
@@ -50,20 +49,6 @@ jobs:
           image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-march23
           tag: 0.1.<< pipeline.number >>
   
-  deploy-to-heroku:
-    docker: 
-      - image: cimg/base:stable
-    steps:
-      - heroku/install
-      - heroku/check-authentication
-      - setup_remote_docker
-      - checkout
-      - heroku/push-docker-image:
-          app-name: hello-circleci-connect-dev
-          process-types: web
-      - heroku/release-docker-image:
-          app-name: hello-circleci-connect-dev
-          process-types: web
        
 workflows:
   run-tests:
@@ -74,6 +59,4 @@ workflows:
           requires:
             - build-and-test
             - dependency-vulnerability-scan 
-      - deploy-to-heroku:
-          requires:
-            - build-docker
+   
