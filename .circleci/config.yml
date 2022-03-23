@@ -64,7 +64,7 @@ jobs:
       - heroku/release-docker-image:
           app-name: hello-circleci-connect-dev
           process-types: web
-      
+       
 workflows:
   run-tests:
     jobs:
