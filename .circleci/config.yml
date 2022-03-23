@@ -73,7 +73,7 @@ workflows:
       - build-docker:
           requires:
             - build-and-test
-            - dependency-vulnerability-scan
+            - dependency-vulnerability-scan 
       - deploy-to-heroku:
           requires:
             - build-docker
