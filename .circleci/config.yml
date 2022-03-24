@@ -72,7 +72,7 @@ jobs:
           image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-23March
           tag: 0.1.<< pipeline.number >>
       - docker/push:
-          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-1-march-22
+          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-23March
           tag: 0.1.<< pipeline.number >>
   
   deploy-to-heroku:
@@ -88,10 +88,10 @@ jobs:
       - checkout
       - setup_remote_docker
       - heroku/push-docker-image:
-          app-name: finally-did-it-dev
+          app-name: finally-did-it
           process-types: web
       - heroku/release-docker-image:
-          app-name: finally-did-it-dev
+          app-name: finally-did-it
           process-types: web
       
 workflows:
