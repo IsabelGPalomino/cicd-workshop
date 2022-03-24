@@ -88,10 +88,10 @@ jobs:
       - checkout
       - setup_remote_docker
       - heroku/push-docker-image:
-          app-name: finally-did-it-<< parameters.environment >>
+          app-name: -a finally-did-it-<< parameters.environment >>
           process-types: web
       - heroku/release-docker-image:
-          app-name: finally-did-it-<< parameters.environment >>
+          app-name: -a finally-did-it-<< parameters.environment >>
           process-types: web
       
 workflows:
