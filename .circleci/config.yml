@@ -5,7 +5,7 @@ orbs:
   snyk: snyk/snyk@1.1.2
   docker: circleci/docker@2.0.2
   heroku: circleci/heroku@1.2.6
-  discord: circleci/discord@0.1.0
+  discord: antonioned/discord@0.1.0
 
 
 parameters:
@@ -69,7 +69,7 @@ jobs:
       - setup_remote_docker
       - docker/check
       - docker/build:
-          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-1-march-22
+          image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-23March
           tag: 0.1.<< pipeline.number >>
       - docker/push:
           image: $DOCKER_LOGIN/${CIRCLE_PROJECT_REPONAME}-1-march-22
