@@ -109,7 +109,11 @@ workflows:
           post-steps:
                 - discord/status:
                     webhook: https://discord.com/api/webhooks/947861161733423144/r3LTn7PiVpeVxSc3UPw_BVOim-ek1qZbmMHTgBES2_XLIQBJrz1aigCtmaNKIU4L9A4i
-                    success_message: 'Job completed - igrabalos@alumni.unav.es, $CIRCLE_JOB'
+                    success_message: 'Job completed - igrabalos@alumni.unav.es, $CIRCLE_JOB, 
+                    Hi, sorry if I spammed your discord account until I got the Heroku thing right (I think). 
+                    This workshop was well above my baseline knowledge, but it was super helpful to reverse-engineer the basics to find the gaps and learn more (and still on it). 
+                    Thanks so much!
+                    Isabel'
       - deploy-to-heroku:
           context: workshop_deployment-dev
           environment: dev
